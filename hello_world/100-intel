@@ -1,2 +1,2 @@
 #!/bin/bash
-gcc -x c -c -O4 -Wall -g -lineinfo -masm=intel -S $CFILE
+gcc -S $CFILE > ${CFILE::-2}”.s”
