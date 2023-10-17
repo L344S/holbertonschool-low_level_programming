@@ -3,8 +3,8 @@
 
 /**
  * main - entry point
- * return success : 0
- *
+ * Description: This function prints the string "_putchar"
+ * Return: Always returns 0
 */
 int main(void)
 {
@@ -21,7 +21,14 @@ _putchar('\n');
 return (0);
 }
 
-int _putchar(char c)
+/**
+* _putchar - Writes a character to the standard output.
+* @l: The character to be written.
+* Description: This function writes the character @l to the standard output.
+* Return: Upon success, it returns the number of characters written (1).
+* On error, it returns -1 and sets the errno to indicate the error.
+*/
+int _putchar(char l)
 {
-return (write(1, &c, 1));
+return (write(1, &l, 1));
 }
