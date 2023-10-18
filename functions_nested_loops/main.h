@@ -29,4 +29,7 @@ int print_last_digit(int);
 /*8-24_hours.c*/
 void jack_bauer(void);
 
+/*9-times_table.c*/
+void times_table(void);
+
 #endif
