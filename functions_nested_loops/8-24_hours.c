@@ -16,8 +16,10 @@ for (hours = 0; hours < 24; hours++)
 {
 for (minutes = 0; minutes < 60; minutes++)
 {
-_putchar('0' + (hours / 10)); /*obtenir le chiffre des dizaines uniquement + '0' pour convertir*/
-_putchar('0' + (hours % 10)); /*obtenir le chiffre des unités uniquement + '0' pour convertir*/
+/*obtenir le chiffre des dizaines uniquement*/
+_putchar('0' + (hours / 10));
+/*obtenir le chiffre des unités uniquement*/
+_putchar('0' + (hours % 10));
 _putchar(':');
 _putchar('0' + (minutes / 10));
 _putchar('0' + (minutes % 10));
