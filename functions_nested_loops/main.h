@@ -32,4 +32,7 @@ void jack_bauer(void);
 /*9-times_table.c*/
 void times_table(void);
 
+/*10-add.c*/
+int add(int, int);
+
 #endif
