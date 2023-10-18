@@ -26,4 +26,7 @@ int _abs(int);
 /*7-print_last_digit.c*/
 int print_last_digit(int);
 
+/*8-24_hours.c*/
+void jack_bauer(void);
+
 #endif
