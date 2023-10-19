@@ -17,4 +17,7 @@ int mul(int a, int b);
 /*3-print_numbers.c*/
 void print_numbers(void);
 
+/*4-print_most_numbers.c*/
+void print_most_numbers(void);
+
 #endif
