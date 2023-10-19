@@ -1,9 +1,8 @@
 #include "main.h"
 
 /**
- * void more_numbers - print number X10
- *
- * Description: prints 10 times the numbers, from 0 to 14
+ * more_numbers - print number X10
+ * Description: prints x10 times the numbers
  * Return: void
 */
 
