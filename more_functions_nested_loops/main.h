@@ -20,4 +20,7 @@ void print_numbers(void);
 /*4-print_most_numbers.c*/
 void print_most_numbers(void);
 
+/*5-more_numbers.c*/
+void more_numbers(void);
+
 #endif
