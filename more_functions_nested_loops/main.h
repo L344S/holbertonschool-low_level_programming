@@ -23,4 +23,7 @@ void print_most_numbers(void);
 /*5-more_numbers.c*/
 void more_numbers(void);
 
+/*6-print_line.c*/
+void print_line(int n);
+
 #endif
