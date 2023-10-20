@@ -22,6 +22,10 @@ printf("Fizz ");
 }
 else if ((multiple % 5) == 0)
 {
+if (multiple > 98)
+{
+printf("Buzz");
+}
 printf("Buzz ");
 }
 else
