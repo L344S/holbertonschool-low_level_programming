@@ -22,7 +22,7 @@ printf("Fizz ");
 }
 else if ((multiple % 5) == 0)
 {
-if (multiple > 99)
+if (multiple >= 100)
 {
 printf("Buzz");
 }
