@@ -14,19 +14,19 @@ for (multiple = 0; multiple <= 100; multiple++)
 {
 if ((multiple % 5) == 0 && (multiple % 3) == 0)
 {
-printf("FizeBuzz");
+printf("FizeBuzz ");
 }
 else if ((multiple % 3) == 0)
 {
-printf("Fize");
+printf("Fize ");
 }
 else if ((multiple % 5) == 0)
 {
-printf("Buzz");
+printf("Buzz ");
 }
 else
 {
-printf("%d", multiple);
+printf("%d ", multiple);
 }
 }
 return (0);
