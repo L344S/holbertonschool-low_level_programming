@@ -12,7 +12,7 @@ hauteur = 0;
 
 while (hauteur < size)
 {
-for (longueur = 0; longueur <= size; longueur++)
+for (longueur = 1; longueur <= size; longueur++)
 {
 _putchar('#');
 }
