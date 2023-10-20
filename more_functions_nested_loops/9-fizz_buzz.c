@@ -29,5 +29,6 @@ else
 printf("%d ", multiple);
 }
 }
+printf("\n");
 return (0);
 }
