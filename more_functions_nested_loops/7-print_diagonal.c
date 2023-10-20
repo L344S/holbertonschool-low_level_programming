@@ -15,10 +15,10 @@ for (s = 2; s <= o; s++)
 {
 _putchar(' ');
 }
-_putchar('/');
+_putchar('\\');
 _putchar('\n');
 }
-if (n > 1)
+if (n < 1)
 {
 _putchar('\n');
 }
