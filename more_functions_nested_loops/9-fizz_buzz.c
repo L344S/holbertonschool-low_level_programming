@@ -10,7 +10,7 @@ int main(void)
 {
 int multiple;
 
-for (multiple = 0; multiple <= 100; multiple++)
+for (multiple = 1; multiple <= 100; multiple++)
 {
 if ((multiple % 5) == 0 && (multiple % 3) == 0)
 {
