@@ -3,7 +3,7 @@
 /**
  * _puts - entry point
  *
- * @str: function parameter 
+ * @str: function parameter
  * Description: function that prints a string
  * Return: nothing
 */
