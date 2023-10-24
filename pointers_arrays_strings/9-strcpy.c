@@ -18,6 +18,6 @@ dest++;
 src++;
 }
 *dest = '\0';
-return copy;
+return (copy);
 }
 
