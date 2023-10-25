@@ -11,8 +11,8 @@ int signe = 1;
 unsigned int resultat = 0;
 
 do {
-if (*s == '-')
-signe = signe * -1;
+if (signe == '-')
+signe *= -1;
 
 else if (*s >= '0' && *s <= '9')
 resultat = (resultat * 10) + (*s - '0');
