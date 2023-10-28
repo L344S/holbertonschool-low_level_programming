@@ -1,10 +1,10 @@
 #include "main.h"
 #include <stdio.h>
 /**
- * leet - entry point
- * @s: pointer
- * Description: function that encodes a string into 1337.
- * Return: convert string if success
+ * print_chessboard - entry point
+ * @a: pointer vers un tableau à deux dimensions
+ * Description: function that prints the chessboard.
+ * Return: nothing
  */
 void print_chessboard(char (*a)[8])
 {
