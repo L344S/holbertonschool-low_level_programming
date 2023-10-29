@@ -19,7 +19,7 @@ if (s[i] == c)
 {
 return (&s[i]); /*same as (s + i)*/
 }
-else
+else (s[i] == '\0')
 {
 return ('\0');
 }
