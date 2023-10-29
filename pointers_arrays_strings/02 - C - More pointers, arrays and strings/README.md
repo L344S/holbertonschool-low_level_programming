@@ -1,7 +1,5 @@
 # Holberton School Low-Level Programming
 
-This repository contains a collection of projects and exercises completed as part of the Holberton School curriculum for Low-Level Programming.
-
 ## Learning Objectives
 
 - Understanding the fundamentals of the C programming language.
