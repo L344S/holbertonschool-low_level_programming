@@ -2,7 +2,7 @@
 #include <stdio.h>
 /**
  * _strpbrk - entry point
- * @s: the original string 
+ * @s: the original string
  * @accept: match an character in the string @s
  * Description: function that searches a string for any of a set of bytes
  * Return: pointer to the byte in s that matches one of the bytes in accept
