@@ -22,3 +22,8 @@ return (&s[i]); /*same as (s + i)*/
 }
 return (NULL);
 }
+/**
+ * Looking to all the letter of the string @s one by ones
+ * if one of them match @c then return the position of the char in @s
+ * if none are matching then return NULL
+ */
