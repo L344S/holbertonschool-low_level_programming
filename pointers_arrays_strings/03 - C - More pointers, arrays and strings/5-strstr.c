@@ -23,3 +23,6 @@ return (&haystack[i]);
 }
 return (NULL);
 }
+/**
+ *
+ */
