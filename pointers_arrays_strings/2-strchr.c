@@ -20,5 +20,5 @@ if (s[i] == c)
 return (&s[i]); /*same as (s + i)*/
 }
 }
-return ('\0');
+return (NULL);
 }
