@@ -23,3 +23,12 @@ return (i);
 }
 return (i);
 }
+
+/**
+ * Starting by going through the original string @s, we will stop when '\0'
+ * We're going to do the same to the @accept string, we will stop when '\0'
+ * We're comparing the letter in @s with all the letters in @accept
+ * If it match we stop looking through the rest of letters in @accept
+ * If accept[j] = '\0' it means that there is no match between @s and @accept
+ * So we send back the number the were matching before this iteration 
+ */
