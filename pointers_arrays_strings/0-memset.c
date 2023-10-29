@@ -19,3 +19,9 @@ s[i] = b;
 
 return (s);
 }
+
+/**
+ * imagine @s is a box, @b is a thing and @n is a number
+ * our code will put the thing inside the box as many
+ * time the number says. When it's done, it gives the box back.
+ */
