@@ -1,9 +1,55 @@
-Learning Objectives
-At the end of this project, you are expected to be able to explain to anyone, without the help of Google:
+# Holberton School Low-Level Programming
 
-General
-What are pointers and how to use them
-What are arrays and how to use them
-What are the differences between pointers and arrays
-How to use strings and how to manipulate them
-Scope of variables
+This repository contains a collection of projects and exercises completed as part of the Holberton School curriculum for Low-Level Programming.
+
+## Learning Objectives
+
+- Understanding the fundamentals of the C programming language.
+- Learning about pointers and how to use them effectively.
+- Working with arrays and strings.
+- Gaining a deeper understanding of memory management and memory layout.
+- Writing C code following the Betty coding style.
+
+## Project and Exercise List
+
+1. **0-strcat.c**
+   - *Description*: Write a function that concatenates two strings.
+
+2. **1-strncat.c**
+   - *Description*: Write a function that concatenates two strings.
+
+3. **2-strncpy.c**
+   - *Description*: Write a function that copies a string.
+
+4. **3-strcmp.c**
+   - *Description*: Write a function that compares two strings.
+
+5. **4-rev_array.c**
+   - *Description*: Write a function that reverses the content of an array of integers.
+
+6. **5-string_toupper.c**
+   - *Description*: Write a function that changes all lowercase letters of a string to uppercase.
+
+7. **6-cap_string.c**
+   - *Description*: Write a function that capitalizes all words of a string.
+
+8. **7-leet.c**
+   - *Description*: Write a function that encodes a string into 1337.
+
+## Requirements
+
+- Code is written in C and is compiled with `gcc`.
+- Compilation options: `-Wall -Werror -Wextra -pedantic -std=gnu89`.
+- No global variables are used.
+- No more than 5 functions per file.
+- The Betty coding style is followed.
+- The standard library is not used except for specific cases where allowed.
+
+## Project Structure
+
+Each project or exercise is organized in its respective directory, and it typically contains the following files:
+
+- `main.h`: Header file containing function prototypes.
+- `.c` files: Source code files with the implementation of the functions.
+- `main.c` (example): A sample main file to test the functions.
+- `README.md`: Description and explanation of the project or exercise.
