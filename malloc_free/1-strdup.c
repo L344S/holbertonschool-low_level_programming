@@ -9,30 +9,18 @@
  */
 char *_strdup(char *str)
 {
+	char *res;
+	int x;
 
-	int i;
-	char *copy_str;
-
-	/*Si str est vide alors return NULL*/
 	if (str == 0)
 		return (0);
-
-	/*On calcule la longueur de la string str*/
-	for (i = 0; str[i]; i++)
-
-		/*On réserve de l'espace mémoire pour notre copy_str*/
-		copy_str = (char *) malloc(sizeof(char) * (i + 1));
-
-	/*Si l'allocation de mémoire échoue alors on renvoie NULL*/
-	if (copy_str == 0)
+	for (x = 0; str[x]; x++)
+		;
+	res = (char *) malloc(sizeof(char) * (x + 1));
+	if (res == 0)
 		return (0);
-
-	/*On copie la string str dans copy_str lettre par lettres*/
-	for (i = 0; str[i]; i++)
-		copy_str[i] = str[i];
-
-	copy_str[i] = '\0';
-
-	/*Une fois la copie faite on renvoie le copy_str final et complet*/
-	return (copy_str);
+	for (x = 0; str[x]; x++)
+		res[x] = str[x];
+	res[x] = '\0';
+	return (res);
 }
