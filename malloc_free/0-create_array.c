@@ -11,17 +11,17 @@
 char *create_array(unsigned int size, char c)
 {
 
-	int i;
+	unsigned int i;
 	char *tableau;
 
 	if (size == 0)
 		return (NULL);
 
-	tableau = malloc((size) * sizeof(char));
+	tableau = malloc(sizeof(char) * size);
 	if (tableau == 0)
 		return (NULL);
 
-	for (i = 0; i != '\0'; i++)
+	for (i = 0; i < size; i++)
 		tableau[i] = c;
 	
 	/*tableau[i] = '\0';*/
