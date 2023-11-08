@@ -42,7 +42,7 @@ char *str_concat(char *s1, char *s2)
 	for (b = 0; b < j; b++, a++)
 	s1_plus_s2[a] = s2[b];
 
-	/*s1_plus_s2[a] = '\0';*/
+	s1_plus_s2[a] = '\0';
 
 	/*on retourne le résultat de notre string qui a concaténer s1 et s2*/
 	return (s1_plus_s2);
