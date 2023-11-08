@@ -10,44 +10,42 @@
  */
 char *str_concat(char *s1, char *s2)
 {
-	int i, j, a, b;
-	char *s1_plus_s2;
+int i, j, a, b;
+    char *s1_plus_s2;
 
-	if (s1 == NULL)
-		s1 = "";
-	if (s2 == NULL)
-		s2 = "";
+    // Check if s1 or s2 are NULL and replace with empty strings
+    if (s1 == NULL)
+        s1 = "";
+    if (s2 == NULL)
+        s2 = "";
 
-	for (i = 0; s1[i] != '\0'; i++)
+    // Calculate the lengths of s1 and s2
+    for (i = 0; s1[i] != '\0'; i++)
+        ;  // Empty loop body, just count the characters in s1
 
-	for (j = 0; s2[j] != '\0'; j++)
+    for (j = 0; s2[j] != '\0'; j++)
+        ;  // Empty loop body, just count the characters in s2
 
-	s1_plus_s2 = malloc((i + j + 1) * sizeof(char));
+    // Allocate memory for the concatenated string
+    s1_plus_s2 = (char *)malloc((i + j + 1) * sizeof(char));
 
-	/*si l'allocation en mémoire ne fonctionne pas alors on renvoie NULL*/
-	if (s1_plus_s2 == 0)
-		return (NULL);
+    // Check if memory allocation failed
+    if (s1_plus_s2 == NULL)
+        return (NULL);
 
-	/*
-	 * boucle : qui va copier lettre par lettre la string s1
-	 * pour affecter son contenu à s1_plus_s2
-	 */
-	for (a = 0; a < i; a++)
-	s1_plus_s2[a] = s1[a];
+    // Copy characters from s1 to s1_plus_s2
+    for (a = 0; a < i; a++)
+        s1_plus_s2[a] = s1[a];
 
-	/*
-	 * boucle : qui va copier lettre par lettre la string s2
-	 * pour affecter son contenu après le contenu actuel de s1_plus_s2
-	 */
-	for (b = 0; b < j; b++, a++)
-	s1_plus_s2[a] = s2[b];
+    // Copy characters from s2 to s1_plus_s2 after the s1 content
+    for (b = 0; b < j; b++, a++)
+        s1_plus_s2[a] = s2[b];
 
-	s1_plus_s2[a] = '\0';
+    // Null-terminate the concatenated string
+    s1_plus_s2[a] = '\0';
 
-	/*on retourne le résultat de notre string qui a concaténer s1 et s2*/
-	return (s1_plus_s2);
+    return (s1_plus_s2);
 }
-
 /*
  * i = longueur de la string s1
  * j = longueur de la string s2
