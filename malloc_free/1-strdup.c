@@ -15,7 +15,7 @@ char *_strdup(char *str)
 
 	/*Si str est vide alors return NULL*/
 	if (str == 0)
-		return (NULL);
+		return (0);
 
 	/*On calcule la longueur de la string str*/
 	for (i = 0; str[i]; i++)
@@ -25,7 +25,7 @@ char *_strdup(char *str)
 
 	/*Si l'allocation de mémoire échoue alors on renvoie NULL*/
 	if (copy_str == 0)
-		return (NULL);
+		return (0);
 
 	/*On copie la string str dans copy_str lettre par lettres*/
 	for (i = 0; str[i]; i++)
