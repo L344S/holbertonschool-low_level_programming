@@ -1,36 +1,38 @@
 #include "main.h"
-#include <stdio.h>
 #include <stdlib.h>
+
 /**
- * alloc_grid - entry point
- * @width: width of our two dimension array of intergers
- * @height: height of our two dimension array of intergers
- * Description: returns a pointer to a 2 dimensional array of integers
- * Return: Null if failure, pointer if success
+ * alloc_grid - function
+ * @width: int
+ * @height: int
+ *
+ * Return: int ptr ptr
  */
-int **alloc_grid(int width, int height)
+int	**alloc_grid(int width, int height)
 {
-	int i, j;
-	int **tableau;
+	int	**r;
+	int	*a;
+	int	x;
+	int	y;
 
-	if (width <= 0)
-		return (NULL);
-	if (height <= 0)
-		return (NULL);
-
-	tableau = malloc(height * sizeof(int *));
-	if (tableau == NULL)
-		return (NULL);
-
-	for (i = 0; i < height; i++)
+	if (width < 1 || height < 1)
+		return (0);
+	r = (int **) malloc(sizeof(int *) * height);
+	if (r == 0)
+		return (0);
+	for (y = 0; y < height; y++)
 	{
-		tableau[i] = malloc(width * sizeof(int));
-		for (j = 0; j < width; j++)
+		a = (int *) malloc(sizeof(int) * width);
+		if (a == 0)
 		{
-			if (tableau[i] == NULL)
-				return (NULL);
+			for (x = 0; x < y; x++)
+				free(r[x]);
+			free(r);
+			return (0);
 		}
+		for (x = 0; x < width; x++)
+			a[x] = 0;
+		r[y] = a;
 	}
-
-	return (tableau);
+	return (r);
 }
