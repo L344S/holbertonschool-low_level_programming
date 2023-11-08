@@ -23,6 +23,8 @@ char *create_array(unsigned int size, char c)
 
 	for (i = 0; i != '\0'; i++)
 		tableau[i] = c;
+	
+	tableau[i] = '\0';
 
 	return (tableau);
 }
