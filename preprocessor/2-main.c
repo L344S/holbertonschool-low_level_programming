@@ -1,8 +1,8 @@
 #include <stdio.h>
 /**
  * main - entry point
- * description:  function that print the filename
- * return: 0 if success
+ * Description: function that print the filename
+ * Return: 0 if success
  */
 int main(void)
 {
