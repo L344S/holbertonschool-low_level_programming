@@ -4,7 +4,7 @@
 /**
  * _calloc - function
  * @nmemb: number of element
- * @size: number of bytes 
+ * @size: number of bytes
  * Description: function that allocates memory for an array, using malloc
  * Return: pointer if success, NULL if failure
  */
