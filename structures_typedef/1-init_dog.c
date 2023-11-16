@@ -13,7 +13,10 @@ void init_dog(struct dog *d, char *name, float age, char *owner)
 	 * on assigne le paramêtre name initialiser dans 1-main.c
 	 * au membre name de la struct dog ici représenter par le pointeur *d
 	 */
-	d->name = name;
-	d->age = age;
-	d->owner = owner;
+	if (d)
+	{
+		d->name = name;
+		d->age = age;
+		d->owner = owner;
+	}
 }
