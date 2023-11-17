@@ -14,7 +14,6 @@ void print_all(const char * const format, ...)
 	unsigned int i = 0;
 
 	va_start(parametres, format);
-
 	while (format && format[i])
 	{
 		switch (format[i])
@@ -32,9 +31,8 @@ void print_all(const char * const format, ...)
 				str = va_arg(parametres, char *);
 
 				if (str != NULL)
-				{
 					printf("%s", str);
-				} else
+				else
 				{
 					printf("(nil)");
 				}
@@ -46,7 +44,6 @@ void print_all(const char * const format, ...)
 		if (format[i + 1] && (format[i] == 'c' || format[i] == 'i' ||
 					format[i] == 'f' || format[i] == 's'))
 			printf(", ");
-
 		i++;
 	}
 
