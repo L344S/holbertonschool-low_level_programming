@@ -27,7 +27,7 @@ list_t *add_node(list_t **head, const char *str)
 	{
 		free(new); /* Libère la mémoire allouée*/
 		return (NULL); /* Retourne NULL */
-    }
+}
 
 	/* Calcule la longueur de la chaîne de caractères */
 	for (lenght = 0; str[lenght];)
