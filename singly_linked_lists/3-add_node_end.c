@@ -10,7 +10,7 @@
 */
 list_t *add_node_end(list_t **head, const char *str)
 {
-	/* variable qui pointe vers le nouveau nœud */
+	/* variable qui pointe vers le nouveau node */
 	list_t *new_node;
 	/* variable qui sert à parcourir la liste */
 	list_t *duplicate;
@@ -19,7 +19,7 @@ list_t *add_node_end(list_t **head, const char *str)
 	/* vérifie si head est NULL */
 	if (head == NULL)
 		return (NULL);
-	/* allocation de mémoire pour le nouveau nœud */
+	/* allocation de mémoire pour le nouveau node */
 	new_node = malloc(sizeof(list_t));
 	/* vérifie si l'allocation a échoué */
 	if (new_node == NULL)
@@ -44,10 +44,14 @@ list_t *add_node_end(list_t **head, const char *str)
 		return (new_node);
 	}
 	duplicate = *head; /* assigne head à duplicate */
+	/* parcourt la liste jusqu'à la fin */
 	while (duplicate->next)
 	{
+	/* assigne le node suivant à duplicate */
 		duplicate = duplicate->next;
 	}
+	/* assigne new_node à duplicate->next */
 	duplicate->next = new_node;
+	/* retourne l'adresse du nouveau node */
 	return (new_node);
 }
