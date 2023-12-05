@@ -8,7 +8,7 @@
 ssize_t read_textfile(const char *filename, size_t letters)
 {
 	int file_descriptor; /* Entier utlisé pour stocker le file descriptor */
-	ssize_t nb_read, nb_write;
+	ssize_t nb_read, nb_write; /* int nombre de letters lu et affiché/écrit */
 	char *buffer; /* Pointeur qui va stocker tmp les caractères lus du fichier */
 
 	if (filename == NULL) /* ERR : Si le nom du fichier est NULL, on retourne 0 */
