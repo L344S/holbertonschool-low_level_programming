@@ -4,3 +4,6 @@
 *.txt
 # ignore all executable files
 a
+b
+c
+cp
