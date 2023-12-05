@@ -1,2 +1,6 @@
+# ignore all main.c files
 *main.c
-*.
+# ignore all .txt files
+*.txt
+# ignore all executable files
+a-z
