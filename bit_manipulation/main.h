@@ -4,6 +4,10 @@
 #include <string.h>
 #include <stdio.h>
 #include <stddef.h>
+#include <unistd.h>
+
+/* Tools */
+int _putchar(char c);
 
 /* Task 0 */
 unsigned int binary_to_uint(const char *b);
