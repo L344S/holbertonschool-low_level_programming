@@ -1,0 +1,16 @@
+# ignore all main.c files
+*main.c
+# ignore all .txt files
+*.txt
+# ignore _utils.c files
+_putchar.c
+# ignore all executable files
+a
+b
+c
+d
+e
+h
+i
+j
+k
