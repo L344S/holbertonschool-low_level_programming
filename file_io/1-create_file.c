@@ -1,5 +1,4 @@
 #include "main.h"
-
 /**
 * create_file - Creates a file and writes text content to it
 * @filename: The name of the file to create
@@ -24,7 +23,7 @@ int create_file(const char *filename, char *text_content)
 
 	if (text_content != NULL) /* ERR : Si le contenu est NULL */
 	{
-		/* Ecriture du contenu dans le fichier */
+		/* Écriture du contenu dans le fichier */
 		write_count = write(file_descriptor, text_content, _strlen(text_content));
 		if (write_count == -1) /* ERR : si l'écriture échoue */
 		{
