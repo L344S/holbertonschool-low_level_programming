@@ -8,7 +8,6 @@
 void hash_table_delete(hash_table_t *ht)
 {
 	unsigned long int i; /* Déclare un index */
-
 	hash_node_t *node, *tmp; /* Déclare deux pointeurs de nœuds de hachage */
 
 	/* Si la table de hachage est NULL, ne fait rien et retourne */
@@ -26,24 +25,18 @@ void hash_table_delete(hash_table_t *ht)
 		{
 			/* Stocke le nœud suivant dans tmp */
 			tmp = node->next;
-
 			/* Libère la clé du nœud actuel */
 			free(node->key);
-
 			/* Libère la valeur du nœud actuel */
 			free(node->value);
-
 			/* Libère le nœud actuel */
 			free(node);
-
 			/* Passe au nœud suivant */
 			node = tmp;
 		}
 	}
-
 	/* Libère le tableau de la table de hachage */
 	free(ht->array);
-
 	/* Libère la table de hachage */
 	free(ht);
 }
