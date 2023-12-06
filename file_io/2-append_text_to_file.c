@@ -8,7 +8,7 @@
 int append_text_to_file(const char *filename, char *text_content)
 {
 	int file_descriptor; /* Entier utilisé pour stocker le file descriptor */
-	ssize_t nb_write, length; /* int nob de lettre écrite & longueur du texte */
+	ssize_t nb_write, lenght; /* int nob de lettre écrite & longueur du texte */
 
 	if (filename == NULL) /* ERR : Si le nom du fichier est NULL */
 		return (-1); /* On retourne -1 */
@@ -26,12 +26,12 @@ int append_text_to_file(const char *filename, char *text_content)
 	}
 
 	/* Calcul de la longueur du texte à ajouter */
-	for (length = 0; text_content[length]; length++)
+	for (lenght = 0; text_content[lenght]; lenght++)
 		;
 
 	/* Ecriture du texte à la fin du fichier */
 	/* et stockage du nombre de caractères écrits dans nb_write */
-	nb_write = write(file_descriptor, text_content, length);
+	nb_write = write(file_descriptor, text_content, lenght);
 	if (nb_write == -1) /* ERR : si l'écriture échoue */
 	{
 		close(file_descriptor); /* on ferme le fichier */
