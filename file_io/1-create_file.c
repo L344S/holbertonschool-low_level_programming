@@ -29,7 +29,5 @@ int create_file(const char *filename, char *text_content)
 	/* Écriture du contenu dans le fichier */
 	write(file_descriptor, text_content, lenght);
 
-	close(file_descriptor); /* Fermeture du fichier */
-
 	return (1); /* On retourne 1 pour indiquer le succès */
 }
