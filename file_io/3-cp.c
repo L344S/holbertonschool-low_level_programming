@@ -1,66 +1,63 @@
 #include "main.h"
+
 /**
-* main - copies the content of a file to another file
-* @argc: The number of arguments passed
-* @argv: The arguments passed
-* Return: Always 0 (Success) or error code
-*/
-int main(int argc, char *argv[])
+ * error_exit - Print error message and exit with specified error code.
+ * @message: The error message to print.
+ * @exit_code: The exit code.
+ */
+void error_exit(const char *message, int exit_code)
 {
-	/* variables qui vont contenir les fd de l'original et de la copie */
-	int og_file_descriptor, copy_file_descriptor;
+	dprintf(STDERR_FILENO, "Error: %s\n", message);
+	exit(exit_code);
+}
 
-	char buffer[1024]; /* stock tmp la data du fichier */
+/**
+ * copy_file - Copy content from one file to another.
+ * @og_fd: Source file descriptor.
+ * @cp_fd: Destination file descriptor.
+ */
+void copy_file(int og_fd, int cp_fd)
+{
+	char buffer[1024];
+	ssize_t read_count, write_count;
 
-	ssize_t read_count, write_count; /* nb de caractères lus et écrits */
-
-	if (argc != 3) /* Si le nombre d'arguments est incorrect */
+	while ((read_count = read(og_fd, buffer, sizeof(buffer))) > 0)
 	{
-		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
-		exit(97); /* ERR : affichage du message d'erreur et exit code 97 */
-	}
-	/* Ouverture du fichier original en lecture seule et stockage du fd */
-	og_file_descriptor = open(argv[1], O_RDONLY);
-	if (og_file_descriptor == -1) /* ERR : si l'ouverture échoue */
-	{
-		/* ERR : affichage du message d'erreur et exit code 98 */
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
-		exit(98);
-	}
-	/* Ouverture du fichier copie en écriture et création s'il n'existe pas */
-	copy_file_descriptor = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
-	if (copy_file_descriptor == -1) /* ERR : si l'ouverture échoue */
-	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
-		exit(99); /* ERR : affichage du message d'erreur et exit code 99 */
-	}
-	while ((read_count = read(og_file_descriptor, buffer, sizeof(buffer))) > 0)
-	{
-	write_count = write(copy_file_descriptor, buffer, read_count);
-	if (write_count == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
-		exit(99);
-	}
-	else if (write_count < read_count)
-	{
-		dprintf(STDERR_FILENO, "Warning: Incomplete write to %s\n", argv[2]);
-	}
+		write_count = write(cp_fd, buffer, read_count);
+		if (write_count == -1)
+			error_exit("Can't write to file", 99);
+		else if (write_count < read_count)
+			dprintf(STDERR_FILENO, "Warning: Incomplete write\n");
 	}
 	if (read_count == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
-		exit(98); /* ERR : affichage du message d'erreur et exit code 98 */
-	}
-	if (close(og_file_descriptor) == -1) /* Fermeture du fichier original */
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", og_file_descriptor);
-		exit(100);
-	}
-	if (close(copy_file_descriptor) == -1) /* Fermeture du fichier copie */
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", copy_file_descriptor);
-		exit(100);
-	}
-	return (0); /* On retourne 0 en cas de succès */
+		error_exit("Can't read from file", 98);
+}
+
+/**
+ * main - Copy the content of a file to another file.
+ * @argc: The number of arguments passed.
+ * @argv: The arguments passed.
+ * Return: Always 0 (Success) or error code.
+ */
+int main(int argc, char *argv[])
+{
+	int og_fd, cp_fd;
+
+	if (argc != 3)
+		error_exit("Usage: cp file_from file_to", 97);
+
+	og_fd = open(argv[1], O_RDONLY);
+	if (og_fd == -1)
+		error_exit("Can't read from source file", 98);
+
+	cp_fd = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
+	if (cp_fd == -1)
+		error_exit("Can't write to destination file", 99);
+
+	copy_file(og_fd, cp_fd);
+
+	if (close(og_fd) == -1 || close(cp_fd) == -1)
+		error_exit("Can't close file descriptor", 100);
+
+	return (0);
 }
