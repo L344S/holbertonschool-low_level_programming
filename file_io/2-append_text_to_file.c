@@ -26,7 +26,8 @@ int append_text_to_file(const char *filename, char *text_content)
 	}
 
 	/* Calcul de la longueur du texte à ajouter */
-	length = _strlen(text_content);
+	for (length = 0; text_content[length]; length++)
+		;
 
 	/* Ecriture du texte à la fin du fichier */
 	/* et stockage du nombre de caractères écrits dans nb_write */
