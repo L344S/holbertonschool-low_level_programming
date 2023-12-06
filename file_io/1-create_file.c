@@ -7,27 +7,26 @@
 */
 int create_file(const char *filename, char *text_content)
 {
-	/* sert à stocker le file descriptor, longueur et le nb de lettres écrites*/
-	int file_descriptor, lenght;
+	int i = 0, file;
 
-	if (filename == NULL) /* ERR : Si le nom du fichier est NULL */
-		return (-1); /* On retourne -1 */
+	if (filename == NULL)
+		return (-1);
 
 	if (text_content == NULL)
+		text_content = "";
+
+
+	while (text_content[i] != '\0')
+	{
+		i++;
+	}
+
+	file = open(filename, O_WRONLY | O_APPEND);
+
+	if (file == -1)
 		return (-1);
 
-	/* Calcul de la longueur du texte à ajouter */
-	for (lenght = 0; text_content[lenght]; lenght++)
-	;
+	write(file, text_content, i);
 
-	/* Ouverture du fichier en écriture seulement avec les perm r et w*/
-	file_descriptor = open(filename, O_WRONLY | O_APPEND);
-
-	if (file_descriptor == -1) /* ERR : si l'ouverture échoue */
-		return (-1);
-
-	/* Écriture du contenu dans le fichier */
-	write(file_descriptor, text_content, lenght);
-
-	return (1); /* On retourne 1 pour indiquer le succès */
+	return (1);
 }
