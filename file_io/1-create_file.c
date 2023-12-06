@@ -14,7 +14,7 @@ int create_file(const char *filename, char *text_content)
 		return (-1); /* On retourne -1 */
 
 	if (text_content == NULL)
-		text_content = "";
+		return (-1);
 
 	/* Calcul de la longueur du texte à ajouter */
 	for (lenght = 0; text_content[lenght]; lenght++)
