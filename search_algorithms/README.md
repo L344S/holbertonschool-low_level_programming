@@ -1,4 +1,4 @@
-# ☘ Search Algorithms
+# ✮ Search Algorithms
 
 ## Table of Contents
 - [Description](#description)
@@ -27,15 +27,15 @@ This project focuses on implementing various search algorithms and analyzing the
 
 ## How it works
 
-#### Linear Search
+#### ✮ Linear Search
 
 Linear search is the simplest search algorithm. It traverses through each element in the array one by one until it finds a match with the searched element. If the element is found, it returns the index of that element in the array. Otherwise, it returns -1.
 
-#### Binary Search
+#### ✮ Binary Search
 
 Binary search is a more efficient search algorithm that works on sorted arrays. It divides the array into two halves, compares the middle element with the searched element, and discards the half of the array in which the searched element cannot be. It continues to divide and conquer until it finds the element or the array is empty.
 
-#### Big O Notation
+#### ✮ Big O Notation
 
 Big O notation is used in computer science to describe the performance or complexity of an algorithm. It describes the worst-case scenario, the longest possible running time or the maximum space an algorithm could require.
 
